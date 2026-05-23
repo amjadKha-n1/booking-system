@@ -1,0 +1,1193 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #0a1628;
+  padding-top: 70px;
+}
+
+.admin-sidebar {
+  width: 280px;
+  background: #060f1a;
+  border-right: 1px solid rgba(212, 184, 122, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+}
+
+.admin-sidebar.closed {
+  width: 80px;
+}
+
+.sidebar-header {
+  padding: 2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(212, 184, 122, 0.1);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-diamond {
+  font-size: 1.5rem;
+  color: #d4b87a;
+}
+
+.logo-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  color: #d4b87a;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  color: #d4b87a;
+}
+
+.sidebar-nav {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  border-left: 2px solid transparent;
+}
+
+.nav-item:hover {
+  color: #ffffff;
+  background: rgba(212, 184, 122, 0.05);
+}
+
+.nav-item.active {
+  color: #d4b87a;
+  background: rgba(212, 184, 122, 0.08);
+  border-left-color: #d4b87a;
+}
+
+.nav-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.admin-main {
+  flex: 1;
+  margin-left: 280px;
+  transition: margin-left 0.3s ease;
+}
+
+.admin-sidebar.closed ~ .admin-main {
+  margin-left: 80px;
+}
+
+.admin-topbar {
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(212, 184, 122, 0.1);
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 70px;
+  z-index: 49;
+}
+
+.topbar-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.topbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.topbar-link:hover {
+  color: #d4b87a;
+}
+
+.admin-content {
+  padding: 3rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.overview-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 184, 122, 0.1);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.overview-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #d4b87a;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.overview-card:hover::before {
+  transform: scaleX(1);
+}
+
+.overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(212, 184, 122, 0.3);
+}
+
+.overview-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.rooms-icon {
+  background: rgba(212, 184, 122, 0.1);
+  color: #d4b87a;
+}
+
+.bookings-icon {
+  background: rgba(165, 193, 180, 0.1);
+  color: #a5c1b4;
+}
+
+.site-icon {
+  background: rgba(212, 165, 165, 0.1);
+  color: #d4a5a5;
+}
+
+.overview-info h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.overview-info p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.overview-link {
+  color: #d4b87a;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.overview-link:hover {
+  color: #e0cba8;
+}
+
+.admin-page {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.page-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.page-subtitle {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+.page-stats {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-badge {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 184, 122, 0.15);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.stat-badge .stat-number {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2rem;
+  color: #d4b87a;
+  font-weight: 600;
+  display: block;
+  line-height: 1;
+}
+
+.stat-badge .stat-label {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+.add-btn {
+  background: #d4b87a;
+  color: #0a1628;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background: #e0cba8;
+  transform: translateY(-2px);
+}
+
+.admin-error {
+  background: rgba(231, 76, 60, 0.1);
+  border: 1px solid rgba(231, 76, 60, 0.3);
+  color: #fca5a5;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.admin-success {
+  background: rgba(39, 174, 96, 0.1);
+  border: 1px solid rgba(39, 174, 96, 0.3);
+  color: #6fcf97;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.form-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 184, 122, 0.15);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+  color: #d4b87a;
+  margin-bottom: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 184, 122, 0.2);
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #d4b87a;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.cancel-btn {
+  padding: 0.8rem 2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+.save-btn {
+  padding: 0.8rem 2rem;
+  background: #d4b87a;
+  border: none;
+  color: #0a1628;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #e0cba8;
+}
+
+.table-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 184, 122, 0.1);
+}
+
+.table-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(212, 184, 122, 0.1);
+}
+
+.table-header h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(212, 184, 122, 0.1);
+}
+
+.admin-table td {
+  padding: 1.2rem 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(212, 184, 122, 0.05);
+}
+
+.admin-table tbody tr {
+  transition: background 0.3s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(212, 184, 122, 0.03);
+}
+
+.td-id {
+  color: rgba(255, 255, 255, 0.3);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+}
+
+.td-name {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.td-desc {
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.td-price {
+  color: #d4b87a;
+  font-weight: 600;
+}
+
+.td-capacity {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.td-date {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.8rem;
+}
+
+.td-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn {
+  color: #d4b87a;
+}
+
+.edit-btn:hover {
+  background: rgba(212, 184, 122, 0.1);
+  border-color: #d4b87a;
+}
+
+.delete-btn {
+  color: #e74c3c;
+}
+
+.delete-btn:hover {
+  background: rgba(231, 76, 60, 0.1);
+  border-color: #e74c3c;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.status-confirmed {
+  background: rgba(39, 174, 96, 0.1);
+  color: #6fcf97;
+  border: 1px solid rgba(39, 174, 96, 0.2);
+}
+
+.status-cancelled {
+  background: rgba(231, 76, 60, 0.1);
+  color: #fca5a5;
+  border: 1px solid rgba(231, 76, 60, 0.2);
+}
+
+.status-pending {
+  background: rgba(241, 196, 15, 0.1);
+  color: #f1c40f;
+  border: 1px solid rgba(241, 196, 15, 0.2);
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-tab {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 1px solid rgba(212, 184, 122, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-tab:hover {
+  border-color: rgba(212, 184, 122, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.filter-tab.active {
+  background: rgba(212, 184, 122, 0.1);
+  border-color: #d4b87a;
+  color: #d4b87a;
+}
+
+.empty-state {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.admin-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  gap: 1.5rem;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(212, 184, 122, 0.1);
+  border-top-color: #d4b87a;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin-loading p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.form-header-with-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.6);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.image-upload-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.file-input-wrapper {
+  position: relative;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  border: 2px dashed rgba(212, 184, 122, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.file-label:hover {
+  border-color: #d4b87a;
+  color: #d4b87a;
+  background: rgba(212, 184, 122, 0.05);
+}
+
+.image-previews {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.preview-item {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border: 1px solid rgba(212, 184, 122, 0.2);
+}
+
+.preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.current-images-section {
+  border-top: 1px solid rgba(212, 184, 122, 0.1);
+  padding-top: 1.5rem;
+}
+
+.current-images-section h4 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.current-images-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.8rem;
+}
+
+.current-image-item {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border: 1px solid rgba(212, 184, 122, 0.15);
+}
+
+.current-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.upload-btn {
+  padding: 1rem 2rem;
+  background: #d4b87a;
+  color: #0a1628;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background: #e0cba8;
+}
+
+.upload-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.td-images {
+  width: 80px;
+}
+
+.table-image-preview {
+  position: relative;
+  width: 60px;
+  height: 40px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid rgba(212, 184, 122, 0.2);
+}
+
+.image-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #d4b87a;
+  color: #0a1628;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-image {
+  color: rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+.image-btn {
+  color: #a5c1b4;
+}
+
+.image-btn:hover {
+  background: rgba(165, 193, 180, 0.1);
+  border-color: #a5c1b4;
+}
+
+.room-card .room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.pending {
+  background: #f1c40f;
+}
+.status-dot.confirmed {
+  background: #6fcf97;
+}
+.status-dot.cancelled {
+  background: #fca5a5;
+}
+.status-dot.completed {
+  background: #74b9ff;
+}
+
+.status-completed {
+  background: rgba(116, 185, 255, 0.1);
+  color: #74b9ff;
+  border: 1px solid rgba(116, 185, 255, 0.2);
+}
+
+.payment-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.payment-badge.paid {
+  background: rgba(39, 174, 96, 0.1);
+  color: #6fcf97;
+  border: 1px solid rgba(39, 174, 96, 0.2);
+}
+
+.payment-badge.unpaid {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #0d1f35;
+  border: 1px solid rgba(212, 184, 122, 0.2);
+  min-width: 160px;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.action-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu button:hover {
+  background: rgba(212, 184, 122, 0.1);
+  color: #ffffff;
+}
+
+.status-btn,
+.payment-btn {
+  color: #d4b87a;
+}
+
+.payment-btn {
+  color: #6fcf97;
+}
+
+.payment-btn:hover {
+  background: rgba(111, 207, 151, 0.1);
+  border-color: #6fcf97;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-card {
+  background: #0d1f35;
+  border: 1px solid rgba(212, 184, 122, 0.2);
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: scaleIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(212, 184, 122, 0.1);
+}
+
+.modal-header h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  color: #d4b87a;
+}
+
+.modal-close {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.payment-booking-info {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 184, 122, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.info-row strong {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.payment-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.payment-form label {
+  display: block;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.payment-form input,
+.payment-form select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 184, 122, 0.2);
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.payment-form input:focus,
+.payment-form select:focus {
+  border-color: #d4b87a;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.payment-form select {
+  cursor: pointer;
+}
+
+.payment-form select option {
+  background: #0d1f35;
+  color: #ffffff;
+}
+
+.admin-error.small {
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.payment-amount {
+  font-size: 0.75rem;
+  color: #6fcf97;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.status-dot.pending {
+  background: #f1c40f;
+}
+.status-dot.confirmed {
+  background: #6fcf97;
+}
+.status-dot.cancelled {
+  background: #fca5a5;
+}
+.status-dot.completed {
+  background: #74b9ff;
+}
+
+.status-completed {
+  background: rgba(116, 185, 255, 0.1);
+  color: #74b9ff;
+  border: 1px solid rgba(116, 185, 255, 0.2);
+}
+
+.payment-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.payment-badge.paid {
+  background: rgba(39, 174, 96, 0.1);
+  color: #6fcf97;
+  border: 1px solid rgba(39, 174, 96, 0.2);
+}
+
+.payment-badge.unpaid {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.action-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #0d1f35;
+  border: 1px solid rgba(212, 184, 122, 0.2);
+  min-width: 160px;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.action-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu button:hover {
+  background: rgba(212, 184, 122, 0.1);
+  color: #ffffff;
+}
+
+.status-btn {
+  color: #d4b87a;
+}

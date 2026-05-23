@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #c9a96e;
+  --gold-light: #e0cba8;
+  --gold-dark: #a68a4c;
+  --navy: #0a1628;
+  --navy-light: #152238;
+  --cream: #f5f0eb;
+  --white: #ffffff;
+  --charcoal: #1a1a1a;
+  --gray: #4a4a4a;
+  --gray-light: #8a8a8a;
+  --rose: #d4a5a5;
+  --sage: #a5c1b4;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.2);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cormorant Garamond", serif;
+}
