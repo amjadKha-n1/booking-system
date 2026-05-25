@@ -1,4 +1,3 @@
-markdown
 # 🏨 Booking System (Full Stack Web App)
 
 A full-stack **hotel booking platform** built with:
@@ -151,35 +150,50 @@ This project helped me deeply understand:
 ## ⚙️ Environment Variables
 
 ### Backend `.env`
-
-```env
 DATABASE_URL=
 JWT_SECRET=
 CLOUDINARY_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
-🚀 How to Run Locally
-Backend
-bash
+
+text
+
+---
+
+## 🚀 How to Run Locally
+
+### Backend
 cd server
 npm install
 npm run migrate:up
 npm run dev
-Frontend
-bash
+
+text
+
+### Frontend
 cd client
 npm install
 npm run dev
-📌 Deployment Architecture
-text
-Frontend (Vercel)
-   ↓
-Backend (Render)
-   ↓
-Database (Neon PostgreSQL)
-   ↓
-Cloudinary (Images)
-👨‍💻 Author
-Built by Amjad Khan
 
-GitHub: https://github.com/amjadKha-n1
+text
+
+---
+
+## 📌 Deployment Architecture
+Frontend (Vercel)
+↓
+Backend (Render)
+↓
+Database (Neon PostgreSQL)
+↓
+Cloudinary (Images)
+
+text
+
+---
+
+## 👨‍💻 Author
+
+Built by **Amjad Khan**
+
+GitHub: [https://github.com/amjadKha-n1](https://github.com/amjadKha-n1)
