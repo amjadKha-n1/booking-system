@@ -148,14 +148,15 @@ This project helped me deeply understand:
 ---
 
 ## ⚙️ Environment Variables
-
 ### Backend `.env`
+
+```env
 DATABASE_URL=
 JWT_SECRET=
 CLOUDINARY_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
-
+```
 text
 
 ---
@@ -168,14 +169,12 @@ npm install
 npm run migrate:up
 npm run dev
 
-text
 
 ### Frontend
 cd client
 npm install
 npm run dev
 
-text
 
 ---
 
