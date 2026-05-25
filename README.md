@@ -1,3 +1,4 @@
+```markdown
 # 🏨 Booking System (Full Stack Web App)
 
 A full-stack **hotel booking platform** built with:
@@ -16,7 +17,7 @@ A full-stack **hotel booking platform** built with:
 
 ## 🚀 Live Demo
 
-👉 https://booking-system-xi-three.vercel.app/
+👉 [https://booking-system-xi-three.vercel.app/](https://booking-system-xi-three.vercel.app/)
 
 ---
 
@@ -157,22 +158,32 @@ JWT_SECRET=
 CLOUDINARY_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
-
+```
 
 ---
 
 ## 🚀 How to Run Locally
 
-Backend
+### Backend
+```bash
 cd server
 npm install
 npm run migrate:up
 npm run dev
-Frontend
+```
+
+### Frontend
+```bash
 cd client
 npm install
 npm run dev
-📌 Deployment Architecture
+```
+
+---
+
+## 📌 Deployment Architecture
+
+```
 Frontend (Vercel)
    ↓
 Backend (Render)
@@ -180,8 +191,13 @@ Backend (Render)
 Database (Neon PostgreSQL)
    ↓
 Cloudinary (Images)
-👨‍💻 Author
+```
 
-Built by Amjad Khan
+---
 
-GitHub: https://github.com/amjadKha-n1
+## 👨‍💻 Author
+
+Built by **Amjad Khan**
+
+GitHub: [https://github.com/amjadKha-n1](https://github.com/amjadKha-n1)
+```
