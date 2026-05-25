@@ -151,6 +151,7 @@ This project helped me deeply understand:
 
 ### Backend `.env`
 
+```env
 DATABASE_URL=
 JWT_SECRET=
 CLOUDINARY_NAME=
@@ -162,8 +163,7 @@ CLOUDINARY_API_SECRET=
 
 ## 🚀 How to Run Locally
 
-### Backend
-```bash
+Backend
 cd server
 npm install
 npm run migrate:up
