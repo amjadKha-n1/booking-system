@@ -1,4 +1,3 @@
-```md
 # 🏨 Booking System (Full Stack Web App)
 
 A full-stack **hotel booking platform** built with:
@@ -69,7 +68,6 @@ The main purpose of this project was to:
 - rooms
 - bookings
 - room_images
-- payments
 
 ### Key Relationships:
 - A user can have many bookings
@@ -152,7 +150,6 @@ This project helped me deeply understand:
 ## ⚙️ Environment Variables
 
 ### Backend `.env`
-```
 
 DATABASE_URL=
 JWT_SECRET=
@@ -160,7 +157,6 @@ CLOUDINARY_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 
-````
 
 ---
 
@@ -172,21 +168,11 @@ cd server
 npm install
 npm run migrate:up
 npm run dev
-````
-
-### Frontend
-
-```bash
+Frontend
 cd client
 npm install
 npm run dev
-```
-
----
-
-## 📌 Deployment Architecture
-
-```
+📌 Deployment Architecture
 Frontend (Vercel)
    ↓
 Backend (Render)
@@ -194,16 +180,8 @@ Backend (Render)
 Database (Neon PostgreSQL)
    ↓
 Cloudinary (Images)
-```
-
----
-
-## 👨‍💻 Author
+👨‍💻 Author
 
 Built by Amjad Khan
 
-GitHub: [https://github.com/amjadKha-n1](https://github.com/amjadKha-n1)
-
-```
-
----
+GitHub: https://github.com/amjadKha-n1
