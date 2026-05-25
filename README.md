@@ -1,4 +1,4 @@
-```markdown
+markdown
 # 🏨 Booking System (Full Stack Web App)
 
 A full-stack **hotel booking platform** built with:
@@ -158,32 +158,20 @@ JWT_SECRET=
 CLOUDINARY_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
-```
-
----
-
-## 🚀 How to Run Locally
-
-### Backend
-```bash
+🚀 How to Run Locally
+Backend
+bash
 cd server
 npm install
 npm run migrate:up
 npm run dev
-```
-
-### Frontend
-```bash
+Frontend
+bash
 cd client
 npm install
 npm run dev
-```
-
----
-
-## 📌 Deployment Architecture
-
-```
+📌 Deployment Architecture
+text
 Frontend (Vercel)
    ↓
 Backend (Render)
@@ -191,13 +179,7 @@ Backend (Render)
 Database (Neon PostgreSQL)
    ↓
 Cloudinary (Images)
-```
+👨‍💻 Author
+Built by Amjad Khan
 
----
-
-## 👨‍💻 Author
-
-Built by **Amjad Khan**
-
-GitHub: [https://github.com/amjadKha-n1](https://github.com/amjadKha-n1)
-```
+GitHub: https://github.com/amjadKha-n1
