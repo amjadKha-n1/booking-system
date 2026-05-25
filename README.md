@@ -164,21 +164,24 @@ text
 ## 🚀 How to Run Locally
 
 ### Backend
+```env
 cd server
 npm install
 npm run migrate:up
 npm run dev
-
+```
 
 ### Frontend
+```env
 cd client
 npm install
 npm run dev
-
+```
 
 ---
 
 ## 📌 Deployment Architecture
+```env
 Frontend (Vercel)
 ↓
 Backend (Render)
@@ -186,8 +189,7 @@ Backend (Render)
 Database (Neon PostgreSQL)
 ↓
 Cloudinary (Images)
-
-text
+```
 
 ---
 
